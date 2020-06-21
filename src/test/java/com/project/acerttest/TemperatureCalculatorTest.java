@@ -21,7 +21,7 @@ public class TemperatureCalculatorTest {
 		cr.setOriginValue(100);
 		Converted c = service.convert(cr);
 		
-		assertEquals(373, c.getConvertedValue());
+		assertEquals(212, c.getConvertedValue());
 	}
 	
 	@Test
@@ -31,7 +31,7 @@ public class TemperatureCalculatorTest {
 		cr.setOriginValue(300);
 		Converted c = service.convert(cr);
 		
-		assertEquals(27, c.getConvertedValue());
+		assertEquals(148.89, c.getConvertedValue());
 	}
 	
 	@Test

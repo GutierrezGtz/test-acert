@@ -10,7 +10,7 @@ public class ConvertedReq {
 	 * isto devera ser revisto(neste caso acredito que ainda exista coesão).
 	 */
 	private String origin;
-	private long originValue;
+	private double originValue;
 	
 	
 	public String getOrigin() {
@@ -19,10 +19,10 @@ public class ConvertedReq {
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
-	public long getOriginValue() {
+	public double getOriginValue() {
 		return originValue;
 	}
-	public void setOriginValue(long originValue) {
+	public void setOriginValue(double originValue) {
 		this.originValue = originValue;
 	}
 }

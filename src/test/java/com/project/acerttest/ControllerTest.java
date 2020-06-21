@@ -42,6 +42,24 @@ public class ControllerTest extends AbstractTest{
 	      int status = mvcResult.getResponse().getStatus();
 	      assertEquals(200, status);
 	      String content = mvcResult.getResponse().getContentAsString();
-	      assertEquals(content, "{\"id\":6,\"origin\":\"celsius\",\"destiny\":\"fahrenheit\",\"originValue\":100,\"convertedValue\":373}");
+	      assertEquals(content, "{\"id\":6,\"origin\":\"celsius\",\"destiny\":\"fahrenheit\",\"originValue\":100.0,\"convertedValue\":212.0}");
+	   }
+	 
+	 @Test
+	   public void postConvertedF() throws Exception {
+	      String uri = "/calculator/convert";
+	      ConvertedReq req = new ConvertedReq();
+	      req.setOrigin("fahrenheit");
+	      req.setOriginValue(212);
+	      String inputJson = super.mapToJson(req);
+	      super.setUp();
+	      MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
+	         .contentType(MediaType.APPLICATION_JSON_VALUE)
+	         .content(inputJson)).andReturn();
+	      
+	      int status = mvcResult.getResponse().getStatus();
+	      assertEquals(200, status);
+	      String content = mvcResult.getResponse().getContentAsString();
+	      assertEquals(content, "{\"id\":7,\"origin\":\"fahrenheit\",\"destiny\":\"celsius\",\"originValue\":212.0,\"convertedValue\":100.0}");
 	   }
 }

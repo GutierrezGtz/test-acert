@@ -6,8 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 @Entity
 @Table(name = "CONVERTED")
 public class Converted {
@@ -24,10 +22,10 @@ public class Converted {
     private String destiny;
    
     @Column(name = "originValue", length = 64, nullable = false)
-	private long originValue;
+	private double originValue;
     
     @Column(name = "convertedValue", length = 64, nullable = false)
-	private long convertedValue;
+	private double convertedValue;
 
 	public Long getId() {
 		return id;
@@ -50,20 +48,20 @@ public class Converted {
 	}
 
 
-	public long getOriginValue() {
+	public double getOriginValue() {
 		return originValue;
 	}
 
-	public void setOriginValue(long originValue) {
+	public void setOriginValue(double originValue) {
 		this.originValue = originValue;
 	}
 
-	public long getConvertedValue() {
+	public double getConvertedValue() {
 		return convertedValue;
 	}
 
-	public void setConvertedValue(long convertedValue) {
-		this.convertedValue = convertedValue;
+	public void setConvertedValue(double d) {
+		this.convertedValue = d;
 	}
 
 }
